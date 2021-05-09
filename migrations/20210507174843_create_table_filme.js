@@ -6,6 +6,7 @@ exports.up = function (knex) {
       table.integer("ano").nullable();
       table.float("nota").nullable();
       table.string("imagem").nullable();
+      table.string("banner").nullable();
     });
   };
   
