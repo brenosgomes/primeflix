@@ -5,6 +5,10 @@ exports.up = function (knex) {
         table.integer("fk_usuario_id").unsigned().notNull();
         table.foreign("fk_usuario_id").references("id").inTable("usuario").onDelete("CASCADE");
         table.unique(['fk_filme_id', 'fk_usuario_id']);
+        table.date("data").nullable();
+        table.float("nota").nullable();
+        table.boolean("favorito").nullable();
+        table.boolean("assistido").nullable();
     });
   };
   
