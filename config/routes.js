@@ -22,4 +22,7 @@ module.exports = app => {
 
     app.route('/filme_genero')
         .get(app.api.filmeGenero.get)
+
+    app.route('/filme_recentes')
+        .get(app.api.filmeRecentes.get)
 }
