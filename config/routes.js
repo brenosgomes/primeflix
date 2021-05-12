@@ -1,9 +1,9 @@
 module.exports = app => {
     app.route('/filme_usuario')
         .post(app.api.filmeUsuario.post)
+        .put(app.api.filmeUsuario.put)
 
     app.route('/filme_usuario/:id')
-        .put(app.api.filmeUsuario.put)
         .delete(app.api.filmeUsuario.remove)
         .get(app.api.filmeUsuario.getById)
 
@@ -24,5 +24,5 @@ module.exports = app => {
         .get(app.api.filmeGenero.get)
 
     app.route('/filmes_recentes')
-        .get(app.api.filmeRecentes.get)
+        .get(app.api.filmesRecentes.get)
 }

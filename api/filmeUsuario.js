@@ -46,17 +46,18 @@ module.exports = (app) => {
 
   const put = async (req, res) => {
     const filmeUsuario = req.body;
-    const id = req.params.id;
+    const fk_usuario_id = req.body.fk_usuario_id;
+    const fk_filme_id = req.body.fk_filme_id;
     try {
-      existsOrError(id, "filmeUsuario does not exist!");
 
       const attfilmeUsuario = await knex("filmeUsuario")
         .update(filmeUsuario)
-        .where({ id: id });
+        .where({ fk_filme_id: fk_filme_id, fk_usuario_id: fk_usuario_id });
       existsOrError(attfilmeUsuario, "filmeUsuario not found");
 
       res.status(200).send();
     } catch (msg) {
+      console.log(msg)
       return res.status(400).send(msg);
     }
   };
