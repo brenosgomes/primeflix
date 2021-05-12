@@ -25,4 +25,7 @@ module.exports = app => {
 
     app.route('/filmes_recentes')
         .get(app.api.filmesRecentes.get)
+
+    app.route('/filmes_nome')
+        .get(app.api.filmeNome.get)
 }
